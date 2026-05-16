@@ -21,7 +21,7 @@ body {
 
 #map {
   width: 100%; /* Adjust width to your desired size */
-  height: 100%; /* Adjust height to your desired size */
+  height: 600px; /* Adjust height to your desired size */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for effect */
   border-radius: 8px; /* Optional: rounded corners */
 }
@@ -57,4 +57,42 @@ em {
 em {
   color: gray;
   font-style: italic;
+}
+#map circle,
+.legend > div {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+  fill: var(--color);
+}
+.legend {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+  justify-content: center;
+  margin-block: 1em;
+}
+
+.legend::before {
+  content: "LEGEND:";
+  font-weight: bold;
+  color: gray;
+}
+
+.legend > div {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.legend > div::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: var(--color);
 }
