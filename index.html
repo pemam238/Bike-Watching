@@ -13,8 +13,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bikewatching</title>
   </head>
-  <body>
+<body>
+  <header>
     <h1>🚴🏼‍♀️ Bikewatching</h1>
-    <div id="map"></div>
-  </body>
+
+    <label>
+      Filter by time:
+      <input id="time-slider" type="range" min="-1" max="1440" value="-1" />
+      <time id="selected-time"></time>
+      <em id="any-time">(any time)</em>
+    </label>
+  </header>
+
+  <div id="map">
+    <svg></svg>
+  </div>
+</body>
 </html>
