@@ -25,3 +25,36 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for effect */
   border-radius: 8px; /* Optional: rounded corners */
 }
+#map {
+  position: relative;
+}
+
+#map svg {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#map svg circle {
+  pointer-events: auto;
+}
+header {
+  display: flex;
+  gap: 1em;
+  align-items: baseline;
+}
+
+label {
+  margin-left: auto;
+}
+
+time,
+em {
+  display: block;
+}
+
+em {
+  color: gray;
+  font-style: italic;
+}
